@@ -1,4 +1,4 @@
-describe('when I go to my image gallery application', () => {
+xdescribe('when I go to my image gallery application', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -9,7 +9,12 @@ describe('when I go to my image gallery application', () => {
   });
 
   it('should click on the image gallery', () => {
-   // IMPLEMENT ME
+    cy.get(':nth-child(2) > .tile-viewport > img')
+      .click();
+
+    cy.get('.footerCaption_2r5qf')
+      .should('be.visible')
+      .should('have.text', 'Dog in the Park - Marie Cruz');
   });
 
 });
