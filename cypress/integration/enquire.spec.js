@@ -8,10 +8,14 @@ describe('enquire loads from homepage', () => {
   });
 
   it('should display the title correctly', () => {
-    cy.get('h1').should('have.text', '\n            \n  Enquire with AAT\n\n\n\n\n          ')
+    cy.get('h1').should('be.visible')
   });
 
   it('should have the enquire form with 6 input elements', () => {
     cy.get('.signup__form input').should('have.length', 6)
+  });
+
+  it('should have submit button', () => {
+    cy.get('.form__buttoncontainer > fab-button-primary').should('be.visible')
   });
 });
